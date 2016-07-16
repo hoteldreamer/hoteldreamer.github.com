@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Hotel Dreamer</title>
+	<script src="js/jquery-3.1.0.min.js"></script>
+</head>
+
+<body>
+	<center>
+		<img src="img/image.jpg" />
+		<br/> This web site is currently under construction
+		<br/> If you want to buy this domain name please contact <a href="mailto:myhoteldreamer@gmail.com">myhoteldreamer@gmail.com</a>
+		<br/> Copyright (C) 2016
+		<br/>
+		<br/>
+		<div id="city" />
+	</center>
+
+	<script>
+		function geoCallback(json) {
+			document.getElementById('city').innerHTML = "Your city is " + json.city.name_en + " (" + json.country.name_en + ")";
+		}
+
+		$.ajax({
+			url: "http://api.sypexgeo.net/jsonp/",
+			dataType: "jsonp",
+			jsonpCallback: "geoCallback"
+		});
+	</script>
+	<script>
+
+</body>
+
+</html>
