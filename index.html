@@ -17,7 +17,7 @@
         
         <script>
            function geoCallback(json){
-                document.getElementById('city').innerHTML = "Your city is " + json.city.name_en;
+                document.getElementById('city').innerHTML = "Your city is " + json.city.name_en + " (" + json.country.name_en + ")";
            }
         
             $.ajax({
