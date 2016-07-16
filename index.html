@@ -9,14 +9,17 @@
 
 <body>
     Please select language:<br/>
-    <a href="/ru/">Русский</a><br/>
-    <a href="/en/">English</a><br/>
+    <a href="ru/main.txt">Русский</a><br/>
+    <a href="en/main.txt">English</a><br/>
 	<script>
 		function geoCallback(json) {
 			var country = json.country.name_en;
-			var url = "./en/index.html";
-			if (country == "Ukraine") {
-				url = "./ru/index.html";
+			var url = "en/main.html";
+			if (country == "Ukraine"
+				|| country == "Russia"
+				|| country == "Belarus"
+				|| country == "Kazakhstan") {
+				url = "ru/main.html";
 			}
 			window.location.replace(url);
 		}
@@ -27,8 +30,6 @@
 			jsonpCallback: "geoCallback"
 		});
 	</script>
-	<script>
-
 </body>
 
 </html>
