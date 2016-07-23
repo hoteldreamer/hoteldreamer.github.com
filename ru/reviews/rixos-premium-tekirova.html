@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Hotel Dreamer - Rixos Premium Tekirova</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="../../css/owl.carousel.css">
+	<link rel="stylesheet" href="../../css/owl.theme.css">
+	<script src="../../js/owl.carousel.min.js"></script>
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-80947727-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<style>
+		#owl-demo .item {
+			margin: 3px;
+		}
+
+		#owl-demo .item img {
+			display: block;
+		}
+	</style>
+</head>
+
+<body>
+	<p>test</p>
+	<div id="owl-demo" class="owl-carousel">
+		<div class="item"><img class="lazyOwl" data-src="../../img/rpt/fresh1.JPG" alt="Fresh Juice"></div>
+		<div class="item"><img class="lazyOwl" data-src="../../img/rpt/fresh2.JPG" alt="Fresh Juice"></div>
+		<div class="item"><img class="lazyOwl" data-src="../../img/rpt/fresh1.JPG" alt="Fresh Juice"></div>
+		<div class="item"><img class="lazyOwl" data-src="../../img/rpt/fresh2.JPG" alt="Fresh Juice"></div>
+	</div>
+	<p>test</p>
+
+	<script>
+		$(document).ready(function() {
+			$("#owl-demo").owlCarousel({
+				items: 4,
+				lazyLoad: true,
+				navigation: true,
+				singleItem: true,
+				autoHeight: true
+			});
+		});
+	</script>
+
+</body>
+
+</html>

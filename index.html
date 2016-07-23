@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html>
-
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="google-site-verification" content="GnBc6RQf8kZ16Z_owIVwmKKU-01EJmQMD5VEgEEUxx0" />
-	<title>Hotel Dreamer</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="GnBc6RQf8kZ16Z_owIVwmKKU-01EJmQMD5VEgEEUxx0"/>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="js/store_json2.min.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -14,31 +16,44 @@
   ga('create', 'UA-80947727-1', 'auto');
   ga('send', 'pageview');
 </script>
+  <link rel="stylesheet" href="css/common.css">
 </head>
-
 <body>
-    Please select language:<br/>
-    <a href="ru/main.html">Русский</a><br/>
-    <a href="en/main.html">English</a><br/>
-	<script>
-		function geoCallback(json) {
-			var country = json.country.name_en;
-			var url = "en/main.html";
-			if (country == "Ukraine"
-				|| country == "Russia"
-				|| country == "Belarus"
-				|| country == "Kazakhstan") {
-				url = "ru/main.html";
-			}
-			window.location.replace(url);
-		}
+<div class="container>
+  <p>Please select language:</p>
+  <p><a href="ru/main.html">Русский</a></p>
+  <p><a href="en/main.html">English</a></p>
+</div>
+<script>
+    function geoCallback(json) {
+        var country = json.country.name_en;
+        var lang = "en";
+        if (country == "Ukraine"
+            || country == "Russia"
+            || country == "Belarus"
+            || country == "Kazakhstan") {
+            lang = "ru";
+        }
+        var url = lang + "/main.html";
+        window.location.replace(url);
+    }
+    
+    var foundLang = false;
+    if (store.enabled) {
+        var lang = store.get("lang");
+        if (lang !== undefined) {
+            var url = lang + "/main.html";
+            window.location.replace(url);
+            foundLang = true;
+        }
+    }
 
-		$.ajax({
-			url: "http://api.sypexgeo.net/jsonp/",
-			dataType: "jsonp",
-			jsonpCallback: "geoCallback"
-		});
-	</script>
-</body>
-
+    if (!foundLang) {
+        $.ajax({
+            url: "http://api.sypexgeo.net/jsonp/",
+            dataType: "jsonp",
+            jsonpCallback: "geoCallback"
+        });
+    }
+</script></body>
 </html>
