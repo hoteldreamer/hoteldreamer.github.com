@@ -1,55 +1,98 @@
-<style>
-  .review {
-      padding: 60px 50px;
-  }
-  .navbar-brand {padding: 5px 15px;}
-  .navbar-right {padding: 7px 0px;}
-  .owl-carousel {
-      max-width: 1200px;
-      align-content: center;
-  }
-  h1 {
-      color: #4165c0;
-      padding: 10px;
-      text-align: center;
-  }
-  .owl-carousel .item {
+.navbar-brand {
+    padding: 5px 15px;
+}
+
+.navbar-right {
+    padding: 7px 0px;
+}
+
+.owl-carousel {
+    max-width: 1200px;
+}
+
+#side-review-img {
+    display: none;
+}
+
+@media only screen and (min-width: 800px) {
+    .review-img-carousel-mobile {
+        display: none;
+    }
+
+    .review-item-list {
+        float: left;
+        width: 50%;
+    }
+
+    #side-review-img {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 0px;
+        width: 50%;
+    }
+}
+
+.review {
+    padding: 0px 10px;
+    position: relative;
+}
+
+    .review:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+h1 {
+    color: #4165c0;
+    padding: 10px;
+    text-align: center;
+}
+
+.owl-carousel .item {
     margin: 3px;
-  }
-  .owl-carousel .item img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  .review-item {
-      border-radius: 25px;
-      padding: 10px 20px;
-      margin: 5px;
-      border-width: 2px;
-      border-style: solid;
-  }
-  .review-item-pos {
+}
+
+    .owl-carousel .item img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+.review-item {
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin: 5px;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.review-item-pos {
     border-color: #73ad21;
     background: #dff1c7;
-  }
-  .review-item-neu {
-    border-color: #e1e83d;
-    background: #f4f6ba;
-  }
-  .review-item-neg {
+}
+
+.review-item-neu {
+    border-color: #c8c8d2;
+    background: #ebebf0;
+}
+
+.review-item-neg {
     border-color: #fa8a4f;
     background: #ffe8dc;
-  }
-  .hotel-list {
-      padding: 20px;
-  }
-  .hotel-list-item {
-      padding: 10px;
-      margin: 5px;
-      border-radius: 10px;
-      border-width: 2px;
-      border-style: solid;
-      border-color: #5f866f;
-      font-size: 200%;
-  }
-</style>
+}
+
+.hotel-list {
+    padding: 20px;
+}
+
+.hotel-list-item {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #5f866f;
+    font-size: 200%;
+}
